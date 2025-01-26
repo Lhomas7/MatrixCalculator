@@ -17,7 +17,7 @@ Matrix::Matrix(int row, int col) {
 
 	matrix = new int*[rows];
 
-	for (int i = 0; i < cols; ++i) {
+	for (int i = 0; i < rows; ++i) {
 		matrix[i] = new int[cols];
 	}
 }
@@ -40,7 +40,7 @@ void Matrix::printMatrix() {
 Matrix Matrix::operator+(const Matrix& matrix2) {
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
-			this->matrix[i][j] += matrix2.matrix[i][j];
+			matrix[i][j] += matrix2.matrix[i][j];
 		}
 	}
 
