@@ -21,7 +21,7 @@ int main() {
 		switch (choice) {
 			case 'a': {
 				int row, col;
-				cout << "Please give the dimensions of the first matrix: ";
+				cout << "Please give the dimensions of the matrices: ";
 				cin >> row >> col;
 
 				Matrix* matrix1 = new Matrix(row, col);
@@ -53,8 +53,6 @@ int main() {
 					}
 					matrix2->printMatrix();
 				}
-				//FIXME
-				//error here
 
 				(*matrix1) + (*matrix2);
 
@@ -68,10 +66,10 @@ int main() {
 			}
 			case 'b': {
 				int row, col;
-				cout << "Please give the dimensions of the first matrix: ";
+				cout << "Please give the dimensions of the matrices: ";
 				cin >> row >> col;
 
-				Matrix matrix1(row, col);
+				Matrix*	matrix1 = new Matrix(row, col);
 
 				//cout << "Please type the values for the matrix: ";
 				for (int i = 1; i <= row; ++i) {
@@ -79,14 +77,12 @@ int main() {
 						cout << "Please enter the value for row " << i << " column " << j << ": ";
 						int value;
 						cin >> value;
-						matrix1.fillMatrix(i, j, value);
+						matrix1->fillMatrix(i, j, value);
 					}
-					matrix1.printMatrix();
+					matrix1->printMatrix();
 				}
-				cout << "Please give the dimensions of the second matrix: ";					
-				cin >> row >> col;
 
-				Matrix matrix2(row, col);
+				Matrix* matrix2 = new Matrix(row, col);
 
 				//cout << "Please type the values for the matrix: ";
 				for (int i = 1; i <= row; ++i) {
@@ -94,16 +90,16 @@ int main() {
 						cout << "Please enter the value for row " << i << " column " << j << ": ";
 						int value;
 						cin >> value;
-						matrix2.fillMatrix(i, j, value);
+						matrix2->fillMatrix(i, j, value);
 					}
-					matrix2.printMatrix();
+					matrix2->printMatrix();
 				}
 
-				matrix1 - matrix2;
+				(*matrix1) - (*matrix2);
 
 				cout << "your resulting matrix is: " << endl;
 
-				matrix1.printMatrix();
+				matrix1->printMatrix();
 				break;
 			}
 			case 'e': {
