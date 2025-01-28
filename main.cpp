@@ -1,5 +1,12 @@
 #include "Matrix.h"
 
+/*AUTHOR: Landon Thomas
+ * Personal Project
+ * Matrix Calculator
+ */
+
+
+//main function acting as a driver for the matrix operations
 int main() {
 
 	bool quit = false;
@@ -100,6 +107,8 @@ int main() {
 				cout << "your resulting matrix is: " << endl;
 
 				matrix_1->printMatrix();
+				free(matrix_1);
+				free(matrix_2);
 				break;
 			}
 			case 'e': {
