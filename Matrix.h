@@ -23,7 +23,7 @@ class Matrix {
 		void fillMatrix(int row, int col, int num);
 		void printMatrix();
 		int** operator+(const Matrix& matrix2);
-		Matrix operator-(const Matrix& matrix2);
+		int** operator-(const Matrix& matrix2);
 		//Matrix operator*(Matrix& matrix2 const);
 		bool operator=(const Matrix& matrix2);
 };

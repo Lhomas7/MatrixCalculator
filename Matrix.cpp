@@ -46,30 +46,39 @@ int** Matrix::operator+(const Matrix& matrix2) {
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
 			newMatrix[i][j] = matrix[i][j] + matrix2.matrix[i][j];
-			cout << newMatrix[i][j] << " ";
 		}
 	}
-
-	cout << "\n" << newMatrix[0][0];
 
 	for (int i = 0; i < rows; ++i) {
 		delete[] matrix[i];
 	}
-	//delete[] matrix;
+	delete[] matrix;
 
 	this->matrix = newMatrix;
 
 	return this->matrix;
 }
 
-Matrix Matrix::operator-(const Matrix& matrix2) {
+int** Matrix::operator-(const Matrix& matrix2) {
+	int** newMatrix = new int*[rows];
+	for (int i = 0; i < rows; ++i) {
+		newMatrix[i] = new int[cols];
+	}
+
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
-			this->matrix[i][j] -= matrix2.matrix[i][j];
+			newMatrix[i][j] = this->matrix[i][j] - matrix2.matrix[i][j];
 		}
 	}
 
-	return *this;
+	for (int i = 0; i < rows; ++i) {
+		delete[] matrix[i];
+	}
+	delete[] matrix;
+
+	this->matrix = newMatrix;
+
+	return this->matrix;
 }
 
 //Matrix Matrix::operator*(Matrix& matrix2 const) {}
