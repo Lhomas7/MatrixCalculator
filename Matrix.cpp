@@ -37,7 +37,7 @@ void Matrix::printMatrix() {
 	}
 }
 
-Matrix Matrix::operator+(const Matrix& matrix2) {
+int** Matrix::operator+(const Matrix& matrix2) {
 	int** newMatrix = new int*[rows];
 	for (int i = 0; i < rows; ++i) {
 		newMatrix[i] = new int[cols];
@@ -50,6 +50,8 @@ Matrix Matrix::operator+(const Matrix& matrix2) {
 		}
 	}
 
+	cout << "\n" << newMatrix[0][0];
+
 	for (int i = 0; i < rows; ++i) {
 		delete[] matrix[i];
 	}
@@ -57,7 +59,7 @@ Matrix Matrix::operator+(const Matrix& matrix2) {
 
 	this->matrix = newMatrix;
 
-	return *this;
+	return this->matrix;
 }
 
 Matrix Matrix::operator-(const Matrix& matrix2) {
