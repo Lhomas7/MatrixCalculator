@@ -38,11 +38,24 @@ void Matrix::printMatrix() {
 }
 
 Matrix Matrix::operator+(const Matrix& matrix2) {
+	int** newMatrix = new int*[rows];
+	for (int i = 0; i < rows; ++i) {
+		newMatrix[i] = new int[cols];
+	}
+
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
-			matrix[i][j] += matrix2.matrix[i][j];
+			newMatrix[i][j] = matrix[i][j] + matrix2.matrix[i][j];
+			cout << newMatrix[i][j] << " ";
 		}
 	}
+
+	for (int i = 0; i < rows; ++i) {
+		delete[] matrix[i];
+	}
+	//delete[] matrix;
+
+	this->matrix = newMatrix;
 
 	return *this;
 }

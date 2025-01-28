@@ -38,8 +38,8 @@ int main() {
 					matrix1->printMatrix();
 				}
 
-				cout << "Please give the dimensions of the second matrix: ";
-				cin >> row >> col;
+				//cout << "Please give the dimensions of the second matrix: ";
+				//cin >> row >> col;
 
 				Matrix* matrix2 = new Matrix(row, col);
 
