@@ -69,7 +69,7 @@ int main() {
 				cout << "Please give the dimensions of the matrices: ";
 				cin >> row >> col;
 
-				Matrix*	matrix1 = new Matrix(row, col);
+				Matrix*	matrix_1 = new Matrix(row, col);
 
 				//cout << "Please type the values for the matrix: ";
 				for (int i = 1; i <= row; ++i) {
@@ -77,12 +77,12 @@ int main() {
 						cout << "Please enter the value for row " << i << " column " << j << ": ";
 						int value;
 						cin >> value;
-						matrix1->fillMatrix(i, j, value);
+						matrix_1->fillMatrix(i, j, value);
 					}
-					matrix1->printMatrix();
+					matrix_1->printMatrix();
 				}
 
-				Matrix* matrix2 = new Matrix(row, col);
+				Matrix* matrix_2 = new Matrix(row, col);
 
 				//cout << "Please type the values for the matrix: ";
 				for (int i = 1; i <= row; ++i) {
@@ -90,16 +90,16 @@ int main() {
 						cout << "Please enter the value for row " << i << " column " << j << ": ";
 						int value;
 						cin >> value;
-						matrix2->fillMatrix(i, j, value);
+						matrix_2->fillMatrix(i, j, value);
 					}
-					matrix2->printMatrix();
+					matrix_2->printMatrix();
 				}
 
-				(*matrix1) - (*matrix2);
+				(*matrix_1) - (*matrix_2);
 
 				cout << "your resulting matrix is: " << endl;
 
-				matrix1->printMatrix();
+				matrix_1->printMatrix();
 				break;
 			}
 			case 'e': {
