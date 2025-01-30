@@ -26,7 +26,8 @@ int main() {
 		char choice;
 		cout << "[A] Matrix addition" << endl;
 		cout << "[B] Matrix subtraction" << endl;
-		//cout << "[C] Matrix Multiplication" << endl;
+		cout << "[C] Transpose a matrix" << endl;
+		//cout << "[D] Matrix Multiplication" << endl;
 		cout << "[E] Quit" << endl;
 
 		//get the user-inputting opetion and set it to lowercase
@@ -155,6 +156,48 @@ int main() {
 				//break out of case
 				break;
 			}
+			case 'c': {
+				//declare row and col variables to hold matrix dimensions
+				int row, col;
+
+				//ask user to input dimensions and take them in
+				cout << "Please enter the dimensions of the Matrix to Transpose:" << endl;
+				cin >> row >> col;
+
+				//allocate memory for a new matrix of dimesnions row x col
+				Matrix* matrix_3 = new Matrix(row, col);
+
+				//iterate through matrix
+				for (int i = 1; i <= row; ++i) {
+					for (int j = 1; j <= col; ++j) {
+						
+						//ask user to input a value for each matrix index and take in the value
+						cout << "Please enter the value for row " << i << " column " << j << ": ";
+						int value;
+						cin >> value;
+
+						//place that value in the matrix
+						matrix_3->fillMatrix(i, j, value);
+					}
+					//print out the matrix after each row is filled, with unfilled rows
+					//represented by all zeros
+					matrix_3->printMatrix();
+				}
+
+				//perform the transpose of the matrix
+				transpose(*matrix_3);
+
+				//print out the resulting transposed matrix
+				cout << "your resulting matrix is: " << endl;
+				matrix_3->printMatrix();
+
+				//free the allocated memory of the matrix
+				free(matrix_3);
+
+				//break out of case
+				break;
+			}
+
 			//case 'e' for exitting program
 			case 'e': {
 				//set quit to true, ending the while loop and menu
