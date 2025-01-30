@@ -15,7 +15,7 @@ int main() {
 
 	//Welcome message
 	cout << "Welcome to the Matrix calculator!" << endl;
-	cout << "***Currently only implements matrix addition and subtraction for integer matrices***" <<< endl;
+	cout << "***Currently only implements matrix addition and subtraction for integer matrices***" << endl;
 
 	//menu is based on a while loop to ensure program keeps running
 	//as long as user intends
