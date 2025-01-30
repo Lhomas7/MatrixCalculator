@@ -4,11 +4,11 @@
  * PersonalProjects
  * Matrix Calculator
  */
+#ifndef MATRIX_H
+#define MATRIX_H
 
 #include <iostream>
 using namespace std;
-#ifndef MATRIX_H
-#define MATRIX_H
 
 /*Matrix Class
  * stores the number of rows and columns of a given matrix,
