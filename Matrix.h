@@ -1,4 +1,4 @@
-//This is the header file for the matrix class.
+//This is the header file for the matrix class and corresponding function
 //
 /*AUTHOR: Landon Thomas
  * PersonalProjects
@@ -9,6 +9,13 @@
 
 #include <iostream>
 using namespace std;
+
+/*Paramters: int* x - a pointer to an integer x
+ * 	     int* y - a pointer to an integer y
+ *return value: none
+ *This function will swap the two value associated with the paramters
+ */
+void swap(int* x, int* y);
 
 /*Matrix Class
  * stores the number of rows and columns of a given matrix,
@@ -110,6 +117,14 @@ class Matrix {
 		 * matrix subtraction between two given matrix objects
 		 */ 
 		int** operator-(const Matrix& matrix2);
+
+		/*Parameters: Matrix - a matrix object 
+		 * return value: none
+		 * This friend function will perform a transpose of a matrix
+		 * object given in the parameter, and also utilize the swap
+		 * function to do so
+		 */
+		void friend transpose(Matrix& matrix2);
 
 		//TO BE IMPLEMENTED: Matrix Multiplication
 		//Matrix operator*(Matrix& matrix2 const);
