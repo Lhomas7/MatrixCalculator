@@ -1,4 +1,4 @@
-# PersonalProjects
+#Matrix calculator
 
 /*This project is intended to be a matrix calculator, which will perform
 matrix addition, subtraction, and multiplication as basic operations.
