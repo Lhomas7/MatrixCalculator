@@ -1,4 +1,12 @@
 #include "Matrix.h"
+
+//swap function
+void swap(int* x, int* y) {
+	//create third variable to hold original x value then swap
+	int temp = *x;
+	*x = *y;
+	*y = temp;
+}
 //Matrix base constructor
 Matrix::Matrix() {
 	//by default set rows and columns to 3 for
@@ -128,6 +136,22 @@ int** Matrix::operator-(const Matrix& matrix2) {
 	//return the matrix
 	return this->matrix;
 }
+
+//transpose friend function
+void transpose(Matrix& matrix1) {
+	//iterate through lower triangular matrix indexes
+	//so that swap only performs once instead of swapping
+	//matrix twice
+	for (int i = 0; i < matrix1.rows; ++i) {
+		for (int j = 0; j < i; ++j) {
+			//swap matrix index with the reverse index
+			swap(matrix1.matrix[i][j], matrix1.matrix[j][i]);
+		}
+	}
+}
+
+
+
 //TODO: implement matrix multiplication operator overload
 //Matrix Matrix::operator*(Matrix& matrix2 const) {}
 

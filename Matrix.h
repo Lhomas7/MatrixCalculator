@@ -118,13 +118,13 @@ class Matrix {
 		 */ 
 		int** operator-(const Matrix& matrix2);
 
-		/*Parameters: Matrix - a matrix object 
+		/*Parameters: Matrix matrix- a Matrix object 
 		 * return value: none
 		 * This friend function will perform a transpose of a matrix
 		 * object given in the parameter, and also utilize the swap
 		 * function to do so
 		 */
-		void friend transpose(Matrix& matrix2);
+		void friend transpose(Matrix& matrix1);
 
 		//TO BE IMPLEMENTED: Matrix Multiplication
 		//Matrix operator*(Matrix& matrix2 const);
