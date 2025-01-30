@@ -27,7 +27,6 @@ int main() {
 		cout << "[A] Matrix addition" << endl;
 		cout << "[B] Matrix subtraction" << endl;
 		//cout << "[C] Matrix Multiplication" << endl;
-		//cout << "[D] Print Matrix" << endl;
 		cout << "[E] Quit" << endl;
 
 		//get the user-inputting opetion and set it to lowercase
@@ -51,7 +50,7 @@ int main() {
 				for (int i = 1; i <= row; ++i) {
 					for (int j = 1;j <= col; ++j) {
 						//ask for userinput for each index in the matrix
-						cout << "Please enter the value for row " << i << " column " << j << ": ";
+						cout << "Please enter the value for matrix 1 row " << i << " column " << j << ": ";
 
 						//take in input and call matrix fill function to place value at specified 
 						//coordinates
@@ -72,7 +71,7 @@ int main() {
 				for (int i = 1; i <= row; ++i) {
 					for (int j = 1; j <= col; ++j) {
 						//take in value for each index in the matrix
-						cout << "Please enter the value for row " << i << " column " << j << ": ";
+						cout << "Please enter the value for matrix 2 row " << i << " column " << j << ": ";
 						int value;
 						cin >> value;
 
@@ -113,7 +112,7 @@ int main() {
 				for (int i = 1; i <= row; ++i) {
 					for (int j = 1; j <= col; ++j) {
 						//ask user to input each value at each index in the matrix and take in the values
-						cout << "Please enter the value for row " << i << " column " << j << ": ";
+						cout << "Please enter the value for matrix 1 row " << i << " column " << j << ": ";
 						int value;
 						cin >> value;
 
@@ -131,7 +130,7 @@ int main() {
 				for (int i = 1; i <= row; ++i) {
 					for (int j = 1; j <= col; ++j) {
 						//ask for each value at each index in matrix and take in that value from the user
-						cout << "Please enter the value for row " << i << " column " << j << ": ";
+						cout << "Please enter the value for matrix 2 row " << i << " column " << j << ": ";
 						int value;
 						cin >> value;
 
