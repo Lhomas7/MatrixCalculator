@@ -121,7 +121,7 @@ class Matrix {
 		 * by seeing if the number of rows in matrix2 matches
 		 * the number of columns in the calling matrix object
 		 */
-		bool operator=(const Matrix& matrix2);
+		bool operator==(const Matrix& matrix2);
 };
 
 #endif
